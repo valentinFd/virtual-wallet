@@ -20,6 +20,6 @@ class RegisterController extends Controller
         ]);
         $user = User::create($attributes);
         auth()->login($user);
-        return redirect('/tasks');
+        return redirect('/wallets');
     }
 }
