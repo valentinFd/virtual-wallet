@@ -14,6 +14,16 @@ class Wallet extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function outgoingTransactions()
+    {
+        return $this->hasMany(Transaction::class, 'from');
+    }
+
+    public function incomingTransactions()
+    {
+        return $this->hasMany(Transaction::class, 'to');
+    }
+
     protected $fillable = [
         'name'
     ];
