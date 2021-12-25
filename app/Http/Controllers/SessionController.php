@@ -19,7 +19,7 @@ class SessionController extends Controller
         ]);
         if (auth()->attempt($attributes))
         {
-            return redirect('/tasks');
+            return redirect('/wallets');
         }
         throw ValidationException::withMessages([
             'password' => 'Your provided credentials could not be verified.'
